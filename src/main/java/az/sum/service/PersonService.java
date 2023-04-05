@@ -43,10 +43,10 @@ public PersonDto createAdmin(CreatePersonRequest request){
 
     return converter.convertToDto(personRepository.save(person));
 }
-private void findPersonByMail(String mail){
-    Optional<Person> person=personRepository.findByMail(mail);
-    person.ifPresent(person1 -> {throw new AccountAlreadyExistException("Account already exists");});
-}
+//private void findPersonByMail(String mail){
+//    Optional<Person> person=personRepository.findByMail(mail);
+//    person.ifPresent(person1 -> {throw new AccountAlreadyExistException("Account already exists");});
+//}
 
 protected void checkUserExistOrNot(String mail){
 personRepository.findByMail(mail).orElseThrow(

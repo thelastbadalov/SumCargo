@@ -17,8 +17,8 @@ public class AdminController {
     private final CourierService courierService;
 
     @PutMapping("/changeOrderStatus/{orderId}")
-    public ResponseEntity<OrderCourierDto> changeOrderStatus(@PathVariable(name = "orderId") Long orderId, @RequestBody UpdateOrderStatusRequest request) {
-        return ResponseEntity.ok(orderService.changeOrderStatus(orderId, request));
+    public ResponseEntity<OrderCourierDto> changeOrderStatus(@PathVariable(name = "orderId") Long id, @RequestBody UpdateOrderStatusRequest request) {
+        return ResponseEntity.ok(orderService.changeOrderStatus(id, request));
     }
 
     @PutMapping("/assignOrderToCourier/{orderId}")

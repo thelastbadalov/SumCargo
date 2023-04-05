@@ -26,12 +26,12 @@ public class AdminController {
         return ResponseEntity.ok(orderService.assignOrderToCourier(id, request));
     }
 
-    @PostMapping
+    @PostMapping("/createCourier")
     public ResponseEntity<CourierDto> createCourier(@RequestBody CreateCourierRequest request) {
         return ResponseEntity.ok(courierService.createCourier(request));
     }
 
-    @GetMapping
+    @GetMapping("/getALlCouriers")
     public ResponseEntity<List<CourierDto>> getAllCouriers() {
         return ResponseEntity.ok(courierService.getAllCouriers());
     }
